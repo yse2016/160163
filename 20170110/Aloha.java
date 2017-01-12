@@ -8,7 +8,6 @@ public class Aloha{
 class Alohaman{
 	private String msg;
 	private String msg2;
-
 	public Alohaman(){
 		this.msg ="ALOHA!";
 		this.msg2="アロハ!";
