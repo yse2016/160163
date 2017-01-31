@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>CreateJS</title>
+</head>
+<body>
+	<h1>CreateJS</h1>
+	<hr>
+	<canvas id="myCanvas" width="500" height="600"></canvas>
+	<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+	<script>
+		window.addEventListener('load',init);
+		function init(){
+			var stage=new createjs.Stage("myCanvas");
+			var shape = new createjs.Shape();
+			shape.graphics.beginFill("#ff0000");
+			shape.graphics.drawRect(0,100,80,80);
+			stage.addChild(shape);
+
+			var muki = +1;
+			var flag = 0;
+			createjs.Ticker.on('click', handleClick);
+			shape.x += 5 * muki;
+			if(shape.x >420 ) {
+				muki = -1;
+			}
+			if(shape.x <0 ) {
+				muki = +1;
+			}
+			stage.update();
+		}
+			function handleClick(event){
+				muki = muki * 2;
+				if (flag==0) {
+					shape.graphics.clear();
+					shape.graphics.beginFill("#0000ff");
+					shape.graphics.drawRect(0, 100, 80, 80);
+					flag = 1;
+				} else {
+					shape.graphics.clear();
+					shape.graphics.beginFill("#ff0000");
+					shape.graphics.drawRect(0, 100, 80, 80);
+					flag=0;
+				}
+			}
+	</script>
+</body>
+</html>
