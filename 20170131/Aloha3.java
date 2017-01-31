@@ -33,7 +33,7 @@ class Windowman {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// labelをつくる
-		labelName = new JLabel("Aoki,Ebina,52");
+		labelName = new JLabel("名前");
 
 		// buttonをつくる
 		buttonOk = new JButton("OK");
